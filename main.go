@@ -106,6 +106,8 @@ func main() {
 			updateCategory(w, r)
 		case "DELETE":
 			deleteCategory(w, r)
+		default:
+			http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 		}
 
 	})
